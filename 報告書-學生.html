@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>產業實習平台</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="https://summercourse.fju.edu.tw/statics/img/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="首頁簡介.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="https://www.im.fju.edu.tw/wp-content/uploads/2024/02/%E8%B3%87%E7%94%A2-14@4x.png" alt="AgriCulture">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="首頁簡介.html">簡介</a></li>
+            <li><a href="企業資訊.html">企業資訊</a></li>
+            <li class="dropdown"><a href="#"><span>公告</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="公告.php">最新公告</a></li>
+              </ul>
+            </li>
+            <li><a href="報告書-學生.html">新增報告書</a></li>
+            <li><a href="個人介面-學生.html"class="active"><b>個人</b></a></li>
+            <li><a href="登入.html">登出</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>實習報告書</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="首頁簡介.html">Home</a></li>
+            <li class="current">實習報告書</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+  <p></p>
+  <p></p>
+  <p></p>
+
+<!-- Comment Form Section -->
+<section id="comment-form" class="comment-form section">
+  <div class="container">
+    <div class="container1">
+    <form action="報告書學生新增.php" method="post">
+      <h4>Post Report 上傳實習資料書</h4>
+      <br>
+      <div class="row">
+        <div class="col form-group">
+          <textarea name="re_title" type="text" class="form-control" placeholder="報告主題" value="" required></textarea>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col form-group">
+          <textarea name="re_content" type="text" class="form-control" placeholder="報告內容" value="" required></textarea>
+        </div>
+      </div>
+      <div class="text-center">
+        <input type="submit" value="上傳" class="btn-upload">
+      </div>
+      <style>
+        .text-center {
+          text-align: center;
+          margin-top: 20px;
+        }
+      
+        .btn-upload {
+          background:#4caf50; /* 漸層背景 */
+          color: white; /* 按鈕文字顏色 */
+          border: none; /* 移除邊框 */
+          padding: 10px 20px; /* 內邊距，調整按鈕大小 */
+          font-size: 16px; /* 調整文字大小 */
+          border-radius: 25px; /* 圓角按鈕 */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+          cursor: pointer; /* 滑鼠變為手型 */
+          transition: all 0.3s ease; /* 添加過渡效果 */
+        }
+      
+        .btn-upload:hover {
+          background: linear-gradient(45deg, #388e3c, #66bb6a); /* 懸停時變色 */
+          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* 懸停時陰影加深 */
+        }
+      
+        .btn-upload:active {
+          transform: scale(0.95); /* 按下時縮小 */
+        }
+      </style>
+    </form>
+  </div>
+  </div>
+  </div>
+  </section><!-- /Comment Form Section -->
+  <style>
+      /* Container */
+      .container1 {
+          max-width: 800px;
+          margin: 20px auto;
+          padding: 50px;
+          background-color: #f9f9f9;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Form Elements */
+      .form-group {
+          margin-bottom: 15px;
+      }
+
+      .form-group label {
+          display: block;
+          margin-bottom: 5px;
+          color: #333;
+      }
+
+      .form-group input[type="text"],
+      .form-group textarea,
+      .form-group input[type="file"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 16px;
+          margin-bottom: 10px;
+      }
+
+      .actions {
+          text-align: center;
+      }
+
+      .actions button {
+          padding: 10px 15px;
+          background-color: #116530;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      .actions button:hover {
+          background-color: #0d4c2c;
+      }
+
+      /* Announcement List */
+      .announcement-list {
+          margin-top: 20px;
+      }
+
+      .announcement-item {
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 15px;
+          margin-bottom: 10px;
+          background-color: #fff;
+      }
+
+      .announcement-item button {
+          margin-right: 10px;
+      }
+  </style>
+  </main>
+  <p></p>
+  <p></p>
+  <p></p>
+  <footer id="footer" class="footer dark-background">
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+        <div><a href="首頁簡介.html">輔仁大學產業實習平台</a></div>
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div class="credits">Designed by 輔仁大學資訊管理學系 412402361 劉姝辰</div>
+        </div>
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href="https://www.facebook.com/FJUIM/?locale=zh_TW"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/fjuim/"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
