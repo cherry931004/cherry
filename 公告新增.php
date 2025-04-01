@@ -22,8 +22,11 @@
     if($_POST['newsdate']!=""){
       $newsdate = $_POST['newsdate'];
     }
+    if($_POST['newslabel']!=""){
+      $newsdate = $_POST['newslabel'];
+    }
     // 查詢資料表
-    $sql = "insert into 公告 (newstitle, newscontent, newsdate) values ('$newstitle', '$newscontent', '$newsdate')";
+    $sql = "insert into 公告 (newstitle, newscontent, newsdate, newslabel ) values ('$newstitle', '$newscontent', '$newsdate','$newslabel')";
     $result = mysqli_query($link, $sql);
     header("Location: 公告編輯.php");
 ?>

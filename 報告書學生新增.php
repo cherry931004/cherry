@@ -19,7 +19,7 @@ session_start();
     }
 
     // 查詢資料表
-    $sql = "insert into 實習報告書上傳 (re_title, re_content) values ('".$_SESSION['re_title']."','".$_SESSION['re_content']."')";
+    $sql = "insert into 實習報告書上傳 (re_title, re_content,account) values ('".$_SESSION['re_title']."','".$_SESSION['re_content']."','".$_SESSION['account']."')";
     $result = mysqli_query($link, $sql);
     echo $sql;
     if ($result) {

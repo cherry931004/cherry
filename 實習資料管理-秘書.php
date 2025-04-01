@@ -163,6 +163,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
+            <td>學號</td>
             <td>報告書編號</td>
             <td>報告書主題</td>
             <td>報告書內容</td>
@@ -187,6 +188,7 @@
           if ($result && mysqli_num_rows($result) > 0) {
               while ($r = mysqli_fetch_assoc($result)) {
                   echo "<tr>
+                          <td>{$r['account']}</td>
                           <td>{$r['re_id']}</td>
                           <td>{$r['re_title']}</td>
                           <td>{$r['re_content']}</td>

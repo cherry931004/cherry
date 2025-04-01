@@ -168,6 +168,7 @@
             <td>公告標題</td>
             <td>公告內容</td>
             <td>公告時間</td>
+            <td>公告標籤</td>
             <td>操作</td>
           </tr>
         </thead>
@@ -191,6 +192,7 @@
                           <td>{$r['newstitle']}</td>
                           <td>{$r['newscontent']}</td>
                           <td>{$r['newsdate']}</td>
+                          <td>{$r['newslabel']}</td>
                           <td><a href='公告編輯刪除.php?id={$r['newsid']}' class='btn btn-warning btn-sm'>修改</a>
                         </tr>";
               }

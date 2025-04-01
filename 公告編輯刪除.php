@@ -187,13 +187,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newstitle = mysqli_real_escape_string($link, $_POST['newstitle']);
     $newscontent = mysqli_real_escape_string($link, $_POST['newscontent']);
     $newsdate = mysqli_real_escape_string($link, $_POST['newsdate']);
+    $newslabel = mysqli_real_escape_string($link, $_POST['newslabel']);
+
 
     if (isset($_POST['update'])) {
         // 更新公告
         $update_sql = "UPDATE 公告 
                        SET newstitle = '$newstitle', 
                            newscontent = '$newscontent', 
-                           newsdate = '$newsdate' 
+                           newsdate = '$newsdate' ,
+                           newslabel = '$newslabel' 
                        WHERE newsid = $id";
         if (mysqli_query($link, $update_sql)) {
             echo "<script>alert('修改成功！');window.location.href='公告編輯.php';</script>";
@@ -213,9 +216,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 mysqli_close($link);
 ?>
-
-
-
 
 <form method="post">
   <section id="blog-posts-2" class="blog-posts-2 section">
@@ -238,6 +238,10 @@ mysqli_close($link);
           <tr>
             <td>公告日期</td>
             <td><input type="date" name="newsdate" value="<?= $announcement['newsdate'] ?>" required></td>
+          </tr>
+          <tr>
+            <td>公告標籤</td>
+            <td><input type="text" name="newslabel" value="<?= $announcement['newslabel'] ?>" required></td>
           </tr>
           <tr>
           <td colspan="2" style="text-align: center;">

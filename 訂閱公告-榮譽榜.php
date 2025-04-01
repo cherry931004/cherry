@@ -41,7 +41,7 @@
           <li class="dropdown"><a href="#" class="active"><b><span>公告</span></b><i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="公告.php">最新公告</a></li>
-              <li><a href="訂閱公告-榮譽榜.php">訂閱公告</a></li>
+              <li><a href="訂閱公告.html">訂閱公告</a></li>
             </ul>
           </li>
           <li><a href="登入.html">登入</a></li>
@@ -167,52 +167,50 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <td>編號</td>
+                        <td>公告編號</td>
                         <td>公告標題</td>
                         <td>公告內容</td>
                         <td>公告時間</td>
-                        <td>公告標籤</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    // 連接資料庫
-                    $link = mysqli_connect('localhost', 'root', '', '產業實習平台');
-                    if (!$link) {
-                        die("資料庫連線失敗: " . mysqli_connect_error());
-                    }
+                <?php
+                  // 連接資料庫
+                  $link = mysqli_connect('localhost', 'root', '', '產業實習平台');
+                  if (!$link) {
+                      die("資料庫連線失敗: " . mysqli_connect_error());
+                  }
 
-                    // 檢查是否有查詢條件
-                    $search = isset($_GET['search']) ? mysqli_real_escape_string($link, $_GET['search']) : '';
+                  // 檢查是否有查詢條件
+                  $search = isset($_GET['search']) ? mysqli_real_escape_string($link, $_GET['search']) : '';
 
-                    // 根據查詢條件生成 SQL 語句
-                    if ($search) {
-                        $sql = "SELECT * FROM 公告 WHERE newstitle LIKE '%$search%' OR newscontent LIKE '%$search%'";
-                    } else {
-                        $sql = "SELECT * FROM 公告";
-                    }
+                  // 根據查詢條件生成 SQL 語句
+                  if ($search) {
+                      $sql = "SELECT * FROM 公告 WHERE newslabel = '榮譽榜' AND (newstitle LIKE '%$search%' OR newscontent LIKE '%$search%')";
+                  } else {
+                      $sql = "SELECT * FROM 公告 WHERE newslabel = '榮譽榜'";
+                  }
 
-                    // 執行查詢
-                    $result = mysqli_query($link, $sql);
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        // 顯示查詢結果
-                        while ($r = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                                    <td>{$r['newsid']}</td>
-                                    <td>{$r['newstitle']}</td>
-                                    <td>{$r['newscontent']}</td>
-                                    <td>{$r['newsdate']}</td>
-                                    <td><a href = '訂閱公告-榮譽榜.php'>{$r['newslabel']}</a></td>
-                                  </tr>";
-                        }
-                    } else {
-                        // 如果沒有查詢到資料
-                        echo "<tr><td colspan='4'>未找到相關公告。</td></tr>";
-                    }
+                  // 執行查詢
+                  $result = mysqli_query($link, $sql);
+                  if ($result && mysqli_num_rows($result) > 0) {
+                      // 顯示查詢結果
+                      while ($r = mysqli_fetch_assoc($result)) {
+                          echo "<tr>
+                                  <td>{$r['newsid']}</td>
+                                  <td>{$r['newstitle']}</td>
+                                  <td>{$r['newscontent']}</td>
+                                  <td>{$r['newsdate']}</td>
+                                </tr>";
+                      }
+                  } else {
+                      // 如果沒有查詢到資料
+                      echo "<tr><td colspan='4'>未找到相關公告。</td></tr>";
+                  }
 
-                    // 關閉資料庫連線
-                    mysqli_close($link);
-                    ?>
+                  // 關閉資料庫連線
+                  mysqli_close($link);
+                  ?>
                 </tbody>
             </table>
         </div>
